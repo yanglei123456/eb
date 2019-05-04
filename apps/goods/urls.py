@@ -1,8 +1,8 @@
 
-from django.conf.urls import include, url
+from django.conf.urls import url
+from goods.views import IndexView
 
 urlpatterns = [
-   
-    url(r'^', include('goods.urls',namespace='goods')),
+    url(r'^index$', IndexView.as_view(), name='index'), # 首页
 
 ]

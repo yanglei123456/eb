@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+{% load staticfiles %}
+<head>
+	<meta charset="utf-8">
+	<title>eb-登录</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'css/myreset.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/mymain.css' %}">
+	<script type="text/javascript" src="{% static 'js/jquery-3.4.0.min.js'  %}"></script>
+	<script type="text/javascript" src="{% static 'js/my_register.js' %}"></script>
+
+ </head>
+<body>
+	<div class="register_con">
+		<div class="l_con fl">
+			<a class="reg_logo"><img src="{% static 'images/logo02.png'%}"></a>
+			<div class="reg_slogan" >简单购</div>
+		</div>
+		<div class="r_con fr">
+			<div class="reg_title">
+				<h1>用户登录</h1>
+				<a href="#">注册</a>
+			</div>
+			<div class="reg_form ">
+				<form method="post" action="/user/login">
+					{% csrf_token %}
+					<ul>
+						<li><label>用户名:</label><input type="text" name="user_name" id="user_name"><span class="error_tip">提示信息</span>
+						</li>
+						<li>
+							<label>密码:</label><input type="password" name="pwd" id='pwd'>
+							<span class="error_tip">提示信息</span>
+						</li>
+						
+						<li class="agreenment" id="agreenment">
+							<input type="checkbox" name="allow" id="allow" checked="checked">
+							<label>同意使用协议</label>
+							<span class="error_tip2">错误提示</span>
+						</li>
+						<li class="reg_sub">
+							<input type="submit" name="" value="登录">
+						</li>
+						{{ errmsg }}
+
+					</ul>
+				</form>
+			</div>
+		</div>
+	</div>
+	<div class="footer ">
+		<div class="foot_link">
+			<a href="#">关于我们</a>
+			<span>|</span>
+			<a href="#">联系我们</a>
+			<span>|</span>
+			<a href="#">招聘信息</a>
+		</div>
+		<p>明月哥哥制作于201905021757 </p>
+		<p>联系方式：18838187219</p>
+	</div>
+</body>
+</html>
